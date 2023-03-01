@@ -49,7 +49,7 @@ $tabel = [
     <table border>
             <thead>
               <tr>
-                <td>Employee</td>
+                <td>Employee ID</td>
                 <td>Name</td>
                 <td>Birthdate</td>
                 <td>Gender</td>
