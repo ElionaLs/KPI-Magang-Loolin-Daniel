@@ -59,10 +59,6 @@ $tabel = [
             <tbody>
               <thead>
               <?php foreach ($tabel as $data) :
-                // {
-                //     $birthdate = date('d F Y', strtotime($data['$birthdate']));
-                // }
-                
                 ?>
             <tr>
                 <td><?= $data['employee'] ?></td>
