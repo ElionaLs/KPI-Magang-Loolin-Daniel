@@ -58,7 +58,12 @@ $tabel = [
             </thead>
             <tbody>
               <thead>
-              <?php foreach ($tabel as $data) : ?>
+              <?php foreach ($tabel as $data) :
+                // {
+                //     $birthdate = date('d F Y', strtotime($data['$birthdate']));
+                // }
+                
+                ?>
             <tr>
                 <td><?= $data['employee'] ?></td>
                 <td><?= $data['name'] ?></td>
@@ -69,6 +74,6 @@ $tabel = [
         <?php endforeach; ?>
               </thead>
             </tbody>
-    </table>
+        </table>
 </body>
 </html>
