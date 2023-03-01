@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
 </head>
+
 <body>
-<?php
+    <?php
 $tabel = [
     [
         "employee" => "E001",
@@ -71,43 +73,43 @@ $nama_hobi = array(
 
 ?>
     <table border>
-            <thead>
-              <tr>
+        <thead>
+            <tr>
                 <td>Employee ID</td>
                 <td>Name</td>
                 <td>Birthdate</td>
                 <td>Gender</td>
                 <td>Salary Type</td>
                 <td>Hobby</td>
-              </tr>
-            </thead>
-            <tbody>
-              <thead>
-                  
-                  <?php foreach ($tabel as $data) { ?>
-                    <?php
+            </tr>
+        </thead>
+        <tbody>
+            <thead>
+
+                <?php foreach ($tabel as $data) { ?>
+                <?php
                     $rupiah = "Rp" . number_format($data['salary'], 0, ',', '.');
                     $genderBaru = $data['gender'] == "M" ? "Male" : "Female";
                     ?>
-            <tr>
-                <td><?= $data['employee'] ?></td>
-                <td><?= $data['name'] ?></td>
-                <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
-                <td><?= $genderBaru ?></td>
-                <td><?= $rupiah ?></td>
-                
-                <?php } ?>
-                <?php for($i=0; $i<count($nama_hobi); $i++) {?>   
-                <td>
-                    <?php for($j=0; $j<count($nama_hobi[$i]["hobi"]); $j++){ ?>
+                <tr>
+                    <td><?= $data['employee'] ?></td>
+                    <td><?= $data['name'] ?></td>
+                    <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
+                    <td><?= $genderBaru ?></td>
+                    <td><?= $rupiah ?></td>
+
+                    <?php } ?>
+                    <?php for($i=0; $i<count($nama_hobi); $i++) {?>
+                    <td>
+                        <?php for($j=0; $j<count($nama_hobi[$i]["hobi"]); $j++){ ?>
                         <?php echo $hobi_id[$nama_hobi[$i]["hobi"][$j]] . ", "; ?>
                         <?php } ?>
                     </td>
-                    
                 </tr>
                 <?php } ?>
             </thead>
         </tbody>
     </table>
 </body>
+
 </html>
