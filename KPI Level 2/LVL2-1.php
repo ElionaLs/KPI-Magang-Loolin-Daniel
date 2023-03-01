@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
 <?php
 $tabel = [
     [
@@ -36,26 +45,30 @@ $tabel = [
         "salary" => "1500000"
     ],
 ];
- 
-echo "<table border='1'";
-echo "<tr>";
-echo "<th>Employee ID</th>";
-echo "<th>Name</th>";
-echo "<th>Birthdate</th>";
-echo "<th>Gender</th>";
-echo "<th>Salary</th>";
-echo "</tr>";
-foreach ($tabel as $isiTabel)
-{
-	echo "<tr>";
-	foreach ($isiTabel as $isi)
-	{
-		echo "<td>";
-        echo $isi;  
-        echo "</td>";
-	}	
- 
-}	
-  echo "</tr>";
-  echo "</table>";
 ?>
+    <table border>
+            <thead>
+              <tr>
+                <td>Employee</td>
+                <td>Name</td>
+                <td>Birthdate</td>
+                <td>Gender</td>
+                <td>Salary Type</td>
+              </tr>
+            </thead>
+            <tbody>
+              <thead>
+              <?php foreach ($tabel as $data) : ?>
+            <tr>
+                <td><?= $data['employee'] ?></td>
+                <td><?= $data['name'] ?></td>
+                <td><?= $data['birthdate'] ?></td>
+                <td><?= $data['gender'] ?></td>
+                <td><?= $data['salary'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+              </thead>
+            </tbody>
+    </table>
+</body>
+</html>
