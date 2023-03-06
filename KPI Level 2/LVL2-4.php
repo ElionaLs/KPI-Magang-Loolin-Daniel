@@ -12,6 +12,9 @@ $tabel = [
     [
         "employee" => "E001",
         "name" => "John Doe",
+        "birthdate" => "05-11-1998",
+        "gender" => "M",
+        "salary" => "8000000",
         "26-12-2022" => "Hadir",
         "27-12-2022" => "Hadir",
         "28-12-2022" => "Hadir",
@@ -22,6 +25,9 @@ $tabel = [
     [
         "employee" => "E002",
         "name" => "Lyra",
+        "birthdate" => "13-01-1998",
+        "gender" => "F",
+        "salary" => "10650000",
         "26-12-2022" => "Hadir",
         "27-12-2022" => "Hadir",
         "28-12-2022" => "Sakit",
@@ -32,6 +38,9 @@ $tabel = [
     [
         "employee" => "E003",
         "name" => "Grace",
+        "birthdate" => "21-08-1995",
+        "gender" => "F",
+        "salary" => "3450000",
         "26-12-2022" => "Sakit",
         "27-12-2022" => "Sakit",
         "28-12-2022" => "Kabur",
@@ -42,6 +51,9 @@ $tabel = [
     [
         "employee" => "E004",
         "name" => "Idris",
+        "birthdate" => "21-07-1993",
+        "gender" => "M",
+        "salary" => "12300000",
         "26-12-2022" => "Hadir",
         "27-12-2022" => "Hadir",
         "28-12-2022" => "Hadir",
@@ -52,6 +64,9 @@ $tabel = [
     [
         "employee" => "E005",
         "name" => "Gwen",
+        "birthdate" => "05-09-2000",
+        "gender" => "F",
+        "salary" => "1500000",
         "26-12-2022" => "Sakit",
         "27-12-2022" => "Hadir",
         "28-12-2022" => "Hadir",
@@ -66,6 +81,9 @@ $tabel = [
               <tr>
                 <td>Employee ID</td>
                 <td>Name</td>
+                <td>Birthdate</td>
+                <td>Gender</td>
+                <td>Salary Type</td>
                 <td>26-12-2022</td>
                 <td>27-12-2022</td>
                 <td>28-12-2022</td>
@@ -77,9 +95,16 @@ $tabel = [
             <tbody>
               <thead>
               <?php foreach ($tabel as $data) { ?>
+                <?php
+                    $rupiah = "Rp" . number_format($data['salary'], 0, ',', '.');
+                    $genderBaru = $data['gender'] == "M" ? "Male" : "Female";
+                ?>
             <tr>
                 <td><?= $data['employee'] ?></td>
                 <td><?= $data['name'] ?></td>
+                <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
+                <td><?= $genderBaru ?></td>
+                <td><?= $rupiah ?></td>
                 <td><?= $data['26-12-2022'] ?></td>
                 <td><?= $data['27-12-2022'] ?></td>
                 <td><?= $data['28-12-2022'] ?></td>
