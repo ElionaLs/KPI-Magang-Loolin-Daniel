@@ -77,7 +77,7 @@ $hobi= [
 
     <table border>
             <thead>
-                <tr>
+                <tr style = "text-align : center;">
                     <td>Employee ID</td>
                     <td>Name</td>
                     <td>Birthdate</td>
