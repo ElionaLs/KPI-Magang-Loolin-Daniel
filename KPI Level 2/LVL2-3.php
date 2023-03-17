@@ -88,12 +88,12 @@
     <table border>
             <thead>
                 <tr style = "text-align : center;">
-                    <td>Employee ID</td>
-                    <td>Name</td>
-                    <td>Birthdate</td>
-                    <td>Gender</td>
-                    <td>Salary Type</td>
-                    <td>Hobby</td>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Birthdate</th>
+                    <th>Gender</th>
+                    <th>Salary Type</th>
+                    <th>Hobby</th>
                 </tr>
             </thead>
         <tbody>
