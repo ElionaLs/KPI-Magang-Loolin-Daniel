@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,6 @@
         }
     </style>
 </head>
-
 <body>
     <?php
 $tabel = [
@@ -78,16 +76,16 @@ $hobi= [
 ?>
 
     <table border>
-        <thead>
-            <tr>
-                <td>Employee ID</td>
-                <td>Name</td>
-                <td>Birthdate</td>
-                <td>Gender</td>
-                <td>Salary Type</td>
-                <td>Hobby</td>
-            </tr>
-        </thead>
+            <thead>
+                <tr>
+                    <td>Employee ID</td>
+                    <td>Name</td>
+                    <td>Birthdate</td>
+                    <td>Gender</td>
+                    <td>Salary Type</td>
+                    <td>Hobby</td>
+                </tr>
+            </thead>
         <tbody>
             <thead>
                 <?php foreach ($tabel as $data) : ?>
@@ -104,8 +102,13 @@ $hobi= [
                     <td>
                     <?php
                     if (is_array($data['hobi'])) {
+                        $i = 0;
                         foreach ($data['hobi'] as $id) {
-                            echo $hobi[$id] . ", ";
+                            echo $hobi[$id];  
+                            if ($i < count($data['hobi'])-1) {
+                            echo ", ";
+                            }
+                            $i++;    
                         }
                     } else {
                         echo $hobi[$data['hobi']];
@@ -118,5 +121,4 @@ $hobi= [
         </tbody>
     </table>
 </body>
-
 </html>
