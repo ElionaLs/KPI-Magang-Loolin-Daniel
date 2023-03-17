@@ -103,8 +103,8 @@ $hobi= [
                     <?php
                     if (is_array($data['hobi'])) {
                         $i = 0;
-                        foreach ($data['hobi'] as $id) {
-                            echo $hobi[$id];  
+                        foreach ($data['hobi'] as $nama) {
+                            echo $hobi[$nama];  
                             if ($i < count($data['hobi'])-1) {
                             echo ", ";
                             }
