@@ -45,6 +45,7 @@ $tabel = [
         "salary" => "1500000"
     ],
 ];
+
 ?>
     <table border>
             <thead>

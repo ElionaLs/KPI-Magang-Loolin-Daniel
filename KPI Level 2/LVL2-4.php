@@ -75,6 +75,10 @@ $tabel = [
         "31-12-2022" => "Kabur"
     ],
 ];
+
+$absen = [
+    "26" => "Had"
+]
 ?>
     <table border>
             <thead>

@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
+    <style>
+        table {
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +22,10 @@ $tabel = [
         "birthdate" => "05-11-1998",
         "gender" => "M",
         "salary" => "8000000",
-        "hobi" => "H001, H003"
+        "hobi" => [
+            "H001", 
+            "H003"
+        ]
     ],
     [
         "employee" => "E002",
@@ -25,7 +33,11 @@ $tabel = [
         "birthdate" => "13-01-1998",
         "gender" => "F",
         "salary" => "10650000",
-        "hobi" => "H004, H002, H003"
+        "hobi" => [
+            "H004", 
+            "H002",
+            "H003"
+        ]
     ],
     [
         "employee" => "E003",
@@ -33,7 +45,10 @@ $tabel = [
         "birthdate" => "21-08-1995",
         "gender" => "F",
         "salary" => "3450000",
-        "hobi" => "H003, H002"
+        "hobi" => [
+            "H003", 
+            "H002"
+        ]
     ],
     [
         "employee" => "E004",
@@ -54,52 +69,54 @@ $tabel = [
 ];
 
 $hobi= [
-    [
         "H001" => "Reading",
         "H002" => "Yoga",
         "H003" => "Shopping",
         "H004" => "Fishing",
         "H005" => "Sleeping"
-    ],
-    [
-        "H001",
-        "H002",
-        "H003",
-        "H004",
-        "H005"
-    ]
-];      
+];
 ?>
-        <table border>
+
+    <table border>
+        <thead>
+            <tr>
+                <td>Employee ID</td>
+                <td>Name</td>
+                <td>Birthdate</td>
+                <td>Gender</td>
+                <td>Salary Type</td>
+                <td>Hobby</td>
+            </tr>
+        </thead>
+        <tbody>
             <thead>
-                <tr>
-                    <td>Employee ID</td>
-                    <td>Name</td>
-                    <td>Birthdate</td>
-                    <td>Gender</td>
-                    <td>Salary Type</td>
-                    <td>Hobby</td>
-                </tr>
-            </thead>
-            <tbody>
-            <thead>
-                <?php foreach ($tabel as $data) { ?>
-                <?php 
-                    $rupiah = "Rp" . number_format($data['salary'], 0, ',', '.');
-                    $genderBaru = $data['gender'] == "M" ? "Male" : "Female";        
+                <?php foreach ($tabel as $data) : ?>
+                <?php
+                    $rupiah = "Rp" . number_format($data['salary'], 0, '.'. ',');
+                    $genderBaru = $data['gender'] == "M" ? "Male" : "Female";
                 ?>
                 <tr>
                     <td><?= $data['employee'] ?></td>
                     <td><?= $data['name'] ?></td>
                     <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
                     <td><?= $genderBaru ?></td>
-                    <td><?= $rupiah ?></td>
-                    <td><?= str_replace($hobi[1], $hobi[0], $data['hobi'])  ?></td>
+                    <td style="text-align : right;"><?= $rupiah ?></td>
+                    <td>
+                    <?php
+                    if (is_array($data['hobi'])) {
+                        foreach ($data['hobi'] as $id) {
+                            echo $hobi[$id] . ", ";
+                        }
+                    } else {
+                        echo $hobi[$data['hobi']];
+                    }
+                    ?>
+                    </td>
                 </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </thead>
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </body>
 
 </html>
