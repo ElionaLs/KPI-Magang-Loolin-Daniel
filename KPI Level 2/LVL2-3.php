@@ -92,7 +92,7 @@ $hobi= [
             <thead>
                 <?php foreach ($tabel as $data) : ?>
                 <?php
-                    $rupiah = "Rp" . number_format($data['salary'], 0, '.'. ',');
+                    $rupiah = "Rp" . number_format($data['salary'], 0, ',', '.');
                     $genderBaru = $data['gender'] == "M" ? "Male" : "Female";
                 ?>
                 <tr>
