@@ -6,73 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
     <style>
+        table, td, th {  
+        border: 1px solid #ddd;
+        text-align: left;
+        }
+
         table {
-            width: 50%;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th, td {
+        padding: 15px;
         }
     </style>
 </head>
 <body>
-    <?php
-$tabel = [
-    [
-        "employee" => "E001",
-        "name" => "John Doe",
-        "birthdate" => "05-11-1998",
-        "gender" => "M",
-        "salary" => "8000000",
-        "hobi" => [
-            "H001", 
-            "H003"
-        ]
-    ],
-    [
-        "employee" => "E002",
-        "name" => "Lyra",
-        "birthdate" => "13-01-1998",
-        "gender" => "F",
-        "salary" => "10650000",
-        "hobi" => [
-            "H004", 
-            "H002",
-            "H003"
-        ]
-    ],
-    [
-        "employee" => "E003",
-        "name" => "Grace",
-        "birthdate" => "21-08-1995",
-        "gender" => "F",
-        "salary" => "3450000",
-        "hobi" => [
-            "H003", 
-            "H002"
-        ]
-    ],
-    [
-        "employee" => "E004",
-        "name" => "Idris",
-        "birthdate" => "21-07-1993",
-        "gender" => "M",
-        "salary" => "12300000",
-        "hobi" => "H001"
-    ],
-    [
-        "employee" => "E005",
-        "name" => "Gwen",
-        "birthdate" => "05-09-2000",
-        "gender" => "F",
-        "salary" => "1500000",
-        "hobi" => "H005"
-    ],
-];
+<?php
+    $tabel = [
+        [
+            "employee" => "E001",
+            "name" => "John Doe",
+            "birthdate" => "05-11-1998",
+            "gender" => "M",
+            "salary" => "8000000",
+            "hobi" => [
+                "H001", 
+                "H003"
+            ]
+        ],
+        [
+            "employee" => "E002",
+            "name" => "Lyra",
+            "birthdate" => "13-01-1998",
+            "gender" => "F",
+            "salary" => "10650000",
+            "hobi" => [
+                "H004", 
+                "H002",
+                "H003"
+            ]
+        ],
+        [
+            "employee" => "E003",
+            "name" => "Grace",
+            "birthdate" => "21-08-1995",
+            "gender" => "F",
+            "salary" => "3450000",
+            "hobi" => [
+                "H003", 
+                "H002"
+            ]
+        ],
+        [
+            "employee" => "E004",
+            "name" => "Idris",
+            "birthdate" => "21-07-1993",
+            "gender" => "M",
+            "salary" => "12300000",
+            "hobi" => "H001"
+        ],
+        [
+            "employee" => "E005",
+            "name" => "Gwen",
+            "birthdate" => "05-09-2000",
+            "gender" => "F",
+            "salary" => "1500000",
+            "hobi" => "H005"
+        ],
+    ];
 
-$hobi= [
-        "H001" => "Reading",
-        "H002" => "Yoga",
-        "H003" => "Shopping",
-        "H004" => "Fishing",
-        "H005" => "Sleeping"
-];
+    $hobi= [
+            "H001" => "Reading",
+            "H002" => "Yoga",
+            "H003" => "Shopping",
+            "H004" => "Fishing",
+            "H005" => "Sleeping"
+    ];
 ?>
 
     <table border>

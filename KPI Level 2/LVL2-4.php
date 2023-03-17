@@ -5,120 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
 <?php
-$tabel = [
-    [
-        "employee" => "E001",
-        "name" => "John Doe",
-        "birthdate" => "05-11-1998",
-        "gender" => "M",
-        "salary" => "8000000",
-        "26-12-2022" => "Hadir",
-        "27-12-2022" => "Hadir",
-        "28-12-2022" => "Hadir",
-        "29-12-2022" => "Hadir",
-        "30-12-2022" => "Hadir",
-        "31-12-2022" => "Hadir"
-    ],
-    [
-        "employee" => "E002",
-        "name" => "Lyra",
-        "birthdate" => "13-01-1998",
-        "gender" => "F",
-        "salary" => "10650000",
-        "26-12-2022" => "Hadir",
-        "27-12-2022" => "Hadir",
-        "28-12-2022" => "Sakit",
-        "29-12-2022" => "Hadir",
-        "30-12-2022" => "Hadir",
-        "31-12-2022" => "Hadir"
-    ],
-    [
-        "employee" => "E003",
-        "name" => "Grace",
-        "birthdate" => "21-08-1995",
-        "gender" => "F",
-        "salary" => "3450000",
-        "26-12-2022" => "Sakit",
-        "27-12-2022" => "Sakit",
-        "28-12-2022" => "Kabur",
-        "29-12-2022" => "Hadir",
-        "30-12-2022" => "Hadir",
-        "31-12-2022" => "Cuti"
-    ],
-    [
-        "employee" => "E004",
-        "name" => "Idris",
-        "birthdate" => "21-07-1993",
-        "gender" => "M",
-        "salary" => "12300000",
-        "26-12-2022" => "Hadir",
-        "27-12-2022" => "Hadir",
-        "28-12-2022" => "Hadir",
-        "29-12-2022" => "Sakit",
-        "30-12-2022" => "Cuti",
-        "31-12-2022" => "Cuti"
-    ],
-    [
-        "employee" => "E005",
-        "name" => "Gwen",
-        "birthdate" => "05-09-2000",
-        "gender" => "F",
-        "salary" => "1500000",
-        "26-12-2022" => "Sakit",
-        "27-12-2022" => "Hadir",
-        "28-12-2022" => "Hadir",
-        "29-12-2022" => "Hadir",
-        "30-12-2022" => "Cuti",
-        "31-12-2022" => "Kabur"
-    ],
-];
+    $tabel = [
+        [
+            "employee" => "E001",
+            "name" => "John Doe",
+            "birthdate" => "05-11-1998",
+            "gender" => "M",
+            "salary" => "8000000",
+        ],
+        [
+            "employee" => "E002",
+            "name" => "Lyra",
+            "birthdate" => "13-01-1998",
+            "gender" => "F",
+            "salary" => "10650000",
+        ],
+        [
+            "employee" => "E003",
+            "name" => "Grace",
+            "birthdate" => "21-08-1995",
+            "gender" => "F",
+            "salary" => "3450000",
+        ],
+        [
+            "employee" => "E004",
+            "name" => "Idris",
+            "birthdate" => "21-07-1993",
+            "gender" => "M",
+            "salary" => "12300000",
+        ],
+        [
+            "employee" => "E005",
+            "name" => "Gwen",
+            "birthdate" => "05-09-2000",
+            "gender" => "F",
+            "salary" => "1500000",
+        ],
+    ];
 
-$absen = [
-    "26" => "Had"
-]
+    $absen = [
+        "26-12-2022" => ["Hadir", "Hadir", "Sakit", "Hadir", "Sakit"],
+        "27-12-2022" => ["Hadir", "Hadir", "Sakit", "Hadir", "Hadir"],
+        "28-12-2022" => ["Hadir", "Sakit", "Kabur", "Hadir", "Hadir"],
+        "29-12-2022" => ["Hadir", "Hadir", "Hadir", "Sakit", "Hadir"],
+        "30-12-2022" => ["Hadir", "Hadir", "Hadir", "Cuti", "Cuti"],
+        "31-12-2022" => ["Hadir", "Hadir", "Cuti", "Cuti", "Hadir"]
+    ];
 ?>
-    <table border>
+    <table>
+        <thead>
+            <tr style="text-align : center;">
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Birthdate</th>
+                <th>Gender</th>
+                <th>Salary Type</th>
+                <?php foreach ($absen as $tanggal => $keterangan) { ?>
+                <th><?= $tanggal ?></th>
+                <?php } ?>
+            </tr>
+        </thead>
+        <tbody>
             <thead>
-              <tr>
-                <td>Employee ID</td>
-                <td>Name</td>
-                <td>Birthdate</td>
-                <td>Gender</td>
-                <td>Salary Type</td>
-                <td>26-12-2022</td>
-                <td>27-12-2022</td>
-                <td>28-12-2022</td>
-                <td>29-12-2022</td>
-                <td>30-12-2022</td>
-                <td>31-12-2022</td>
-              </tr>
-            </thead>
-            <tbody>
-              <thead>
-              <?php foreach ($tabel as $data) { ?>
+                <?php foreach ($tabel as $data) { ?>
                 <?php
                     $rupiah = "Rp" . number_format($data['salary'], 0, ',', '.');
                     $genderBaru = $data['gender'] == "M" ? "Male" : "Female";
                 ?>
-            <tr>
-                <td><?= $data['employee'] ?></td>
-                <td><?= $data['name'] ?></td>
-                <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
-                <td><?= $genderBaru ?></td>
-                <td><?= $rupiah ?></td>
-                <td><?= $data['26-12-2022'] ?></td>
-                <td><?= $data['27-12-2022'] ?></td>
-                <td><?= $data['28-12-2022'] ?></td>
-                <td><?= $data['29-12-2022'] ?></td>
-                <td><?= $data['30-12-2022'] ?></td>
-                <td><?= $data['31-12-2022'] ?></td>
-            </tr> 
-        <?php } ?>
-              </thead>
-            </tbody>
-        </table>
+                <tr>
+                    <td><?= $data['employee'] ?></td>
+                    <td><?= $data['name'] ?></td>
+                    <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
+                    <td><?= $genderBaru ?></td>
+                    <td style="text-align : right;"><?= $rupiah ?></td>
+                    <?php foreach ($absen as $tanggal => $keterangan) { ?>
+                    <td><?= $keterangan[array_search($data['employee'], array_column($tabel, 'employee'))] ?></td>
+                    <?php } ?>
+                </tr>
+            </thead>
+            <?php } ?>
+        </tbody>
+    </table>
 </body>
+
 </html>
