@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +25,9 @@
         }
     </style>
 </head>
+
 <body>
-<?php
+    <?php
     $tabel = [
         [
             "employee" => "E001",
@@ -70,37 +72,43 @@
             "E002" => "Hadir", 
             "E003" => "Sakit", 
             "E004" => "Hadir", 
-            "E005" => "Sakit"],
+            "E005" => "Sakit"
+        ],
         "27-12-2022" => [
             "E001" => "Hadir", 
             "E002" => "Hadir", 
             "E003" => "Sakit", 
             "E004" => "Hadir", 
-            "E005" => "Hadir"],
+            "E005" => "Hadir"
+        ],
         "28-12-2022" => [
             "E001" => "Hadir", 
             "E002" => "Sakit", 
             "E003" => "Kabur", 
             "E004" => "Hadir", 
-            "E005" => "Hadir"],
+            "E005" => "Hadir"
+        ],
         "29-12-2022" => [
             "E001" => "Hadir", 
             "E002" => "Hadir", 
             "E003" => "Hadir", 
             "E004" => "Sakit", 
-            "E005" => "Hadir"],
+            "E005" => "Hadir"
+        ],
         "30-12-2022" => [
             "E001" => "Hadir", 
             "E002" => "Hadir", 
             "E003" => "Hadir", 
             "E004" => "Cuti", 
-            "E005" => "Cuti"],
+            "E005" => "Cuti"
+        ],
         "31-12-2022" => [
             "E001" => "Hadir", 
             "E002" => "Hadir", 
             "E003" => "Cuti", 
             "E004" => "Cuti", 
-            "E005" => "Hadir"]
+            "E005" => "Hadir"
+        ]
     ];
 ?>
     <table>
