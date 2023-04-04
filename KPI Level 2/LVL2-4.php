@@ -120,7 +120,7 @@
                 <th>Gender</th>
                 <th>Salary Type</th>
                 <?php foreach ($absen as $tanggal => $keterangan) { ?>
-                <th><?= $tanggal ?></th>
+                    <th><?= $tanggal ?></th>
                 <?php } ?>
             </tr>
         </thead>
@@ -138,7 +138,7 @@
                     <td><?= $genderBaru ?></td>
                     <td style="text-align : right;"><?= $rupiah ?></td>
                     <?php foreach ($absen as $tanggal => $keterangan) { ?>
-                    <td><?= $keterangan[$data['employee']] ?></td>
+                        <td><?= $keterangan[$data['employee']] ?></td>
                     <?php } ?>
                 </tr>
             </thead>
