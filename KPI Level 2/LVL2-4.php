@@ -65,12 +65,42 @@
     ];
 
     $absen = [
-        "26-12-2022" => ["Hadir", "Hadir", "Sakit", "Hadir", "Sakit"],
-        "27-12-2022" => ["Hadir", "Hadir", "Sakit", "Hadir", "Hadir"],
-        "28-12-2022" => ["Hadir", "Sakit", "Kabur", "Hadir", "Hadir"],
-        "29-12-2022" => ["Hadir", "Hadir", "Hadir", "Sakit", "Hadir"],
-        "30-12-2022" => ["Hadir", "Hadir", "Hadir", "Cuti", "Cuti"],
-        "31-12-2022" => ["Hadir", "Hadir", "Cuti", "Cuti", "Hadir"]
+        "26-12-2022" => [
+            "E001" => "Hadir", 
+            "E002" => "Hadir", 
+            "E003" => "Sakit", 
+            "E004" => "Hadir", 
+            "E005" => "Sakit"],
+        "27-12-2022" => [
+            "E001" => "Hadir", 
+            "E002" => "Hadir", 
+            "E003" => "Sakit", 
+            "E004" => "Hadir", 
+            "E005" => "Hadir"],
+        "28-12-2022" => [
+            "E001" => "Hadir", 
+            "E002" => "Sakit", 
+            "E003" => "Kabur", 
+            "E004" => "Hadir", 
+            "E005" => "Hadir"],
+        "29-12-2022" => [
+            "E001" => "Hadir", 
+            "E002" => "Hadir", 
+            "E003" => "Hadir", 
+            "E004" => "Sakit", 
+            "E005" => "Hadir"],
+        "30-12-2022" => [
+            "E001" => "Hadir", 
+            "E002" => "Hadir", 
+            "E003" => "Hadir", 
+            "E004" => "Cuti", 
+            "E005" => "Cuti"],
+        "31-12-2022" => [
+            "E001" => "Hadir", 
+            "E002" => "Hadir", 
+            "E003" => "Cuti", 
+            "E004" => "Cuti", 
+            "E005" => "Hadir"]
     ];
 ?>
     <table>
@@ -99,8 +129,8 @@
                     <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
                     <td><?= $genderBaru ?></td>
                     <td style="text-align : right;"><?= $rupiah ?></td>
-                    <?php foreach ($absen as $tanggal => $keterangan) { ?>
-                    <td><?= $keterangan[array_search($data['employee'], array_column($tabel, 'employee'))] ?></td>
+                    <?php foreach ($absen as $tanggal) { ?>
+                    <td><?= $tanggal[$data['employee']] ?></td>
                     <?php } ?>
                 </tr>
             </thead>
