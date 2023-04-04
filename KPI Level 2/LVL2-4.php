@@ -137,8 +137,8 @@
                     <td><?= date('d F Y', strtotime($data['birthdate'])) ?></td>
                     <td><?= $genderBaru ?></td>
                     <td style="text-align : right;"><?= $rupiah ?></td>
-                    <?php foreach ($absen as $tanggal) { ?>
-                    <td><?= $tanggal[$data['employee']] ?></td>
+                    <?php foreach ($absen as $tanggal => $keterangan) { ?>
+                    <td><?= $keterangan[$data['employee']] ?></td>
                     <?php } ?>
                 </tr>
             </thead>
